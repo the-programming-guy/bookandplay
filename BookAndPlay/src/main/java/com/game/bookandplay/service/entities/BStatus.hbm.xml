@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 14 Mar, 2019 10:09:47 PM by Hibernate Tools 5.3.0.Beta2 --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.game.bookandplay.service.entities.BStatus" optimistic-lock="version" polymorphism="implicit" schema="GUIDEME" select-before-update="false" table="B_STATUS">
+        <id name="statusCd" type="string">
+            <column length="50" name="STATUS_CD"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="statusDesc" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="STATUS_DESC"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="CREATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="createdBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="CREATED_BY"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="UPDATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="UPDATED_BY"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BSlots" optimistic-lock="true" sort="unsorted" table="B_SLOT">
+            <key on-delete="noaction">
+                <column length="50" name="STATUS_CD"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BSlot" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BPayments" optimistic-lock="true" sort="unsorted" table="B_PAYMENT">
+            <key on-delete="noaction">
+                <column length="50" name="STATUS_CD"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BPayment" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BAvailableGameses" optimistic-lock="true" sort="unsorted" table="B_AVAILABLE_GAMES">
+            <key on-delete="noaction">
+                <column length="50" name="STATUS_CD"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BAvailableGames" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BBookings" optimistic-lock="true" sort="unsorted" table="B_BOOKING">
+            <key on-delete="noaction">
+                <column length="50" name="STATUS_CD"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BBooking" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BGames" optimistic-lock="true" sort="unsorted" table="B_GAME">
+            <key on-delete="noaction">
+                <column length="50" name="STATUS_CD"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BGame" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BUserses" optimistic-lock="true" sort="unsorted" table="B_USERS">
+            <key on-delete="noaction">
+                <column length="50" name="STATUS_CD"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BUsers" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

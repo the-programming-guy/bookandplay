@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="connection.username">guideme</property>
+		<property name="connection.password">guideme</property>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<mapping
+			resource="com/game/bookandplay/service/entities/BBooking.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BGame.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BUsers.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BPayment.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BSlot.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BStatus.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BAvailableGames.hbm.xml" />
+		<mapping
+			resource="com/game/bookandplay/service/entities/BUserDetails.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

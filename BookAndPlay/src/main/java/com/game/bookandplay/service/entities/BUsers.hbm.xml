@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 14 Mar, 2019 10:09:47 PM by Hibernate Tools 5.3.0.Beta2 --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.game.bookandplay.service.entities.BUsers" optimistic-lock="version" polymorphism="implicit" schema="GUIDEME" select-before-update="false" table="B_USERS">
+        <id name="BUsersId" type="big_decimal">
+            <column name="B_USERS_ID" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.game.bookandplay.service.entities.BStatus" embed-xml="true" fetch="select" insert="true" name="BStatus" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="STATUS_CD"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="USERNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="CREATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="createdBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="CREATED_BY"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="UPDATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="UPDATED_BY"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BBookings" optimistic-lock="true" sort="unsorted" table="B_BOOKING">
+            <key on-delete="noaction">
+                <column name="B_USERS_ID" precision="22" scale="0"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BBooking" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="BUserDetailses" optimistic-lock="true" sort="unsorted" table="B_USER_DETAILS">
+            <key on-delete="noaction">
+                <column name="B_USERS_ID" precision="22" scale="0"/>
+            </key>
+            <one-to-many class="com.game.bookandplay.service.entities.BUserDetails" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 14 Mar, 2019 10:09:47 PM by Hibernate Tools 5.3.0.Beta2 --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.game.bookandplay.service.entities.BUserDetails" optimistic-lock="version" polymorphism="implicit" schema="GUIDEME" select-before-update="false" table="B_USER_DETAILS">
+        <id name="BUserDetailsId" type="big_decimal">
+            <column name="B_USER_DETAILS_ID" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.game.bookandplay.service.entities.BUsers" embed-xml="true" fetch="select" insert="true" name="BUsers" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="B_USERS_ID" precision="22" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="firstname" optimistic-lock="true" type="string" unique="false">
+            <column length="75" name="FIRSTNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="lastname" optimistic-lock="true" type="string" unique="false">
+            <column length="75" name="LASTNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="EMAIL"/>
+        </property>
+        <property generated="never" lazy="false" name="mobile" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="MOBILE" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="gender" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="GENDER"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="CREATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="createdBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="CREATED_BY"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="UPDATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="UPDATED_BY"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="GUIDEME" match-name="B_AVAILABLE_GAMES"/>
+  <table-filter match-schema="GUIDEME" match-name="B_BOOKING"/>
+  <table-filter match-schema="GUIDEME" match-name="B_GAME"/>
+  <table-filter match-schema="GUIDEME" match-name="B_PAYMENT"/>
+  <table-filter match-schema="GUIDEME" match-name="B_SLOT"/>
+  <table-filter match-schema="GUIDEME" match-name="B_STATUS"/>
+  <table-filter match-schema="GUIDEME" match-name="B_USERS"/>
+  <table-filter match-schema="GUIDEME" match-name="B_USER_DETAILS"/>
+</hibernate-reverse-engineering>

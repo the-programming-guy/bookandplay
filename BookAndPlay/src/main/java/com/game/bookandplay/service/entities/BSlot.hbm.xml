@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 14 Mar, 2019 10:09:47 PM by Hibernate Tools 5.3.0.Beta2 --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.game.bookandplay.service.entities.BSlot" optimistic-lock="version" polymorphism="implicit" schema="GUIDEME" select-before-update="false" table="B_SLOT">
+        <id name="BSlotId" type="big_decimal">
+            <column name="B_SLOT_ID" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.game.bookandplay.service.entities.BStatus" embed-xml="true" fetch="select" insert="true" name="BStatus" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="STATUS_CD"/>
+        </many-to-one>
+        <many-to-one class="com.game.bookandplay.service.entities.BGame" embed-xml="true" fetch="select" insert="true" name="BGame" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="B_GAME_ID" precision="22" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="slot1" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_1"/>
+        </property>
+        <property generated="never" lazy="false" name="slot2" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_2"/>
+        </property>
+        <property generated="never" lazy="false" name="slot3" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_3"/>
+        </property>
+        <property generated="never" lazy="false" name="slot4" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_4"/>
+        </property>
+        <property generated="never" lazy="false" name="slot5" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_5"/>
+        </property>
+        <property generated="never" lazy="false" name="slot6" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_6"/>
+        </property>
+        <property generated="never" lazy="false" name="slot7" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_7"/>
+        </property>
+        <property generated="never" lazy="false" name="slot8" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_8"/>
+        </property>
+        <property generated="never" lazy="false" name="slot9" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_9"/>
+        </property>
+        <property generated="never" lazy="false" name="slot10" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_10"/>
+        </property>
+        <property generated="never" lazy="false" name="slot11" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_11"/>
+        </property>
+        <property generated="never" lazy="false" name="slot12" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_12"/>
+        </property>
+        <property generated="never" lazy="false" name="slot13" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_13"/>
+        </property>
+        <property generated="never" lazy="false" name="slot14" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_14"/>
+        </property>
+        <property generated="never" lazy="false" name="slot15" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_15"/>
+        </property>
+        <property generated="never" lazy="false" name="slot16" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_16"/>
+        </property>
+        <property generated="never" lazy="false" name="slot17" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_17"/>
+        </property>
+        <property generated="never" lazy="false" name="slot18" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_18"/>
+        </property>
+        <property generated="never" lazy="false" name="slot19" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_19"/>
+        </property>
+        <property generated="never" lazy="false" name="slot20" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_20"/>
+        </property>
+        <property generated="never" lazy="false" name="slot21" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_21"/>
+        </property>
+        <property generated="never" lazy="false" name="slot22" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_22"/>
+        </property>
+        <property generated="never" lazy="false" name="slot23" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_23"/>
+        </property>
+        <property generated="never" lazy="false" name="slot24" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="SLOT_24"/>
+        </property>
+        <property generated="never" lazy="false" name="available" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="AVAILABLE"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="CREATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="createdBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="CREATED_BY"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedDate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="UPDATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedBy" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="UPDATED_BY"/>
+        </property>
+    </class>
+</hibernate-mapping>
