@@ -2,23 +2,22 @@ package com.game.bookandplay.service.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 
 /**
- * The persistent class for the B_PAYMENT database table.
+ * The persistent class for the B_AVAILABLE_GAMES database table.
  * 
  */
 @Entity
-@Table(name="B_PAYMENT")
-@NamedQuery(name="BPayment.findAll", query="SELECT b FROM BPayment b")
-public class BPayment implements Serializable {
+@Table(name="B_AVAILABLE_GAMES")
+@NamedQuery(name="BAvailableGame.findAll", query="SELECT b FROM BAvailableGame b")
+public class BAvailableGame implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="B_PAYMENT_ID")
-	private long bPaymentId;
+	@Column(name="B_AVAILABLE_GAMES_ID")
+	private long bAvailableGamesId;
 
 	@Column(name="CREATED_BY")
 	private String createdBy;
@@ -27,16 +26,11 @@ public class BPayment implements Serializable {
 	@Column(name="CREATED_DATE")
 	private Date createdDate;
 
-	private String gateway;
-
-	@Column(name="\"HOURS\"")
-	private BigDecimal hours;
+	@Column(name="NAME_OF_GAME")
+	private String nameOfGame;
 
 	@Column(name="STATUS_CD")
 	private String statusCd;
-
-	@Column(name="TOTAL_AMOUNT")
-	private BigDecimal totalAmount;
 
 	@Column(name="UPDATED_BY")
 	private String updatedBy;
@@ -45,20 +39,15 @@ public class BPayment implements Serializable {
 	@Column(name="UPDATED_DATE")
 	private Date updatedDate;
 
-	//bi-directional many-to-one association to BBooking
-	@ManyToOne
-	@JoinColumn(name="B_BOOKING_ID")
-	private BBooking BBooking;
-
-	public BPayment() {
+	public BAvailableGame() {
 	}
 
-	public long getBPaymentId() {
-		return this.bPaymentId;
+	public long getBAvailableGamesId() {
+		return this.bAvailableGamesId;
 	}
 
-	public void setBPaymentId(long bPaymentId) {
-		this.bPaymentId = bPaymentId;
+	public void setBAvailableGamesId(long bAvailableGamesId) {
+		this.bAvailableGamesId = bAvailableGamesId;
 	}
 
 	public String getCreatedBy() {
@@ -77,20 +66,12 @@ public class BPayment implements Serializable {
 		this.createdDate = createdDate;
 	}
 
-	public String getGateway() {
-		return this.gateway;
+	public String getNameOfGame() {
+		return this.nameOfGame;
 	}
 
-	public void setGateway(String gateway) {
-		this.gateway = gateway;
-	}
-
-	public BigDecimal getHours() {
-		return this.hours;
-	}
-
-	public void setHours(BigDecimal hours) {
-		this.hours = hours;
+	public void setNameOfGame(String nameOfGame) {
+		this.nameOfGame = nameOfGame;
 	}
 
 	public String getStatusCd() {
@@ -99,14 +80,6 @@ public class BPayment implements Serializable {
 
 	public void setStatusCd(String statusCd) {
 		this.statusCd = statusCd;
-	}
-
-	public BigDecimal getTotalAmount() {
-		return this.totalAmount;
-	}
-
-	public void setTotalAmount(BigDecimal totalAmount) {
-		this.totalAmount = totalAmount;
 	}
 
 	public String getUpdatedBy() {
@@ -123,14 +96,6 @@ public class BPayment implements Serializable {
 
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
-	}
-
-	public BBooking getBBooking() {
-		return this.BBooking;
-	}
-
-	public void setBBooking(BBooking BBooking) {
-		this.BBooking = BBooking;
 	}
 
 }

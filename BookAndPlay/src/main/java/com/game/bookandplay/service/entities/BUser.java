@@ -7,18 +7,18 @@ import java.util.List;
 
 
 /**
- * The persistent class for the B_GAME database table.
+ * The persistent class for the B_USERS database table.
  * 
  */
 @Entity
-@Table(name="B_GAME")
-@NamedQuery(name="BGame.findAll", query="SELECT b FROM BGame b")
-public class BGame implements Serializable {
+@Table(name="B_USERS")
+@NamedQuery(name="BUser.findAll", query="SELECT b FROM BUser b")
+public class BUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="B_GAME_ID")
-	private long bGameId;
+	@Column(name="B_USERS_ID")
+	private long bUsersId;
 
 	@Column(name="CREATED_BY")
 	private String createdBy;
@@ -26,14 +26,6 @@ public class BGame implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@Column(name="CREATED_DATE")
 	private Date createdDate;
-
-	private String location;
-
-	@Column(name="NAME_OF_GAME")
-	private String nameOfGame;
-
-	@Column(name="ORGANIZATION_NAME")
-	private String organizationName;
 
 	@Column(name="STATUS_CD")
 	private String statusCd;
@@ -45,23 +37,25 @@ public class BGame implements Serializable {
 	@Column(name="UPDATED_DATE")
 	private Date updatedDate;
 
+	private String username;
+
 	//bi-directional many-to-one association to BBooking
-	@OneToMany(mappedBy="BGame")
+	@OneToMany(mappedBy="BUser")
 	private List<BBooking> BBookings;
 
-	//bi-directional many-to-one association to BSlot
-	@OneToMany(mappedBy="BGame")
-	private List<BSlot> BSlots;
+	//bi-directional many-to-one association to BUserDetail
+	@OneToMany(mappedBy="BUser")
+	private List<BUserDetail> BUserDetails;
 
-	public BGame() {
+	public BUser() {
 	}
 
-	public long getBGameId() {
-		return this.bGameId;
+	public long getBUsersId() {
+		return this.bUsersId;
 	}
 
-	public void setBGameId(long bGameId) {
-		this.bGameId = bGameId;
+	public void setBUsersId(long bUsersId) {
+		this.bUsersId = bUsersId;
 	}
 
 	public String getCreatedBy() {
@@ -78,30 +72,6 @@ public class BGame implements Serializable {
 
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
-	}
-
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getNameOfGame() {
-		return this.nameOfGame;
-	}
-
-	public void setNameOfGame(String nameOfGame) {
-		this.nameOfGame = nameOfGame;
-	}
-
-	public String getOrganizationName() {
-		return this.organizationName;
-	}
-
-	public void setOrganizationName(String organizationName) {
-		this.organizationName = organizationName;
 	}
 
 	public String getStatusCd() {
@@ -128,6 +98,14 @@ public class BGame implements Serializable {
 		this.updatedDate = updatedDate;
 	}
 
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public List<BBooking> getBBookings() {
 		return this.BBookings;
 	}
@@ -138,38 +116,38 @@ public class BGame implements Serializable {
 
 	public BBooking addBBooking(BBooking BBooking) {
 		getBBookings().add(BBooking);
-		BBooking.setBGame(this);
+		BBooking.setBUser(this);
 
 		return BBooking;
 	}
 
 	public BBooking removeBBooking(BBooking BBooking) {
 		getBBookings().remove(BBooking);
-		BBooking.setBGame(null);
+		BBooking.setBUser(null);
 
 		return BBooking;
 	}
 
-	public List<BSlot> getBSlots() {
-		return this.BSlots;
+	public List<BUserDetail> getBUserDetails() {
+		return this.BUserDetails;
 	}
 
-	public void setBSlots(List<BSlot> BSlots) {
-		this.BSlots = BSlots;
+	public void setBUserDetails(List<BUserDetail> BUserDetails) {
+		this.BUserDetails = BUserDetails;
 	}
 
-	public BSlot addBSlot(BSlot BSlot) {
-		getBSlots().add(BSlot);
-		BSlot.setBGame(this);
+	public BUserDetail addBUserDetail(BUserDetail BUserDetail) {
+		getBUserDetails().add(BUserDetail);
+		BUserDetail.setBUser(this);
 
-		return BSlot;
+		return BUserDetail;
 	}
 
-	public BSlot removeBSlot(BSlot BSlot) {
-		getBSlots().remove(BSlot);
-		BSlot.setBGame(null);
+	public BUserDetail removeBUserDetail(BUserDetail BUserDetail) {
+		getBUserDetails().remove(BUserDetail);
+		BUserDetail.setBUser(null);
 
-		return BSlot;
+		return BUserDetail;
 	}
 
 }
